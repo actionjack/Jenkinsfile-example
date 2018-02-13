@@ -15,7 +15,7 @@ pipeline {
                 sh '''
                     pwd
                     ls
-                    mvn clean package
+                    mvn --batch-mode clean package
                 '''
             }
         }
