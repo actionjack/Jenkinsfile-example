@@ -7,12 +7,14 @@ pipeline {
             steps {
                 echo 'Building Stage...'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']],
-                  userRemoteConfigs: [[url: 'https://github.com/blade-samples/hello.git']]])
+                  userRemoteConfigs: [[url: 'https://github.com/sullis/dropwizard-helloworld.git']]])
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing Stage...'
+                sh '''
+                    mvn clean package
+                '''
             }
         }
         stage('Deploy') {
