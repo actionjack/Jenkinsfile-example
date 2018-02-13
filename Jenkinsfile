@@ -15,7 +15,7 @@ pipeline {
                 sh '''
                     pwd
                     ls
-                    /var/jenkins_home/bin/apache-maven-3.5.2/bi/nmvn clean package
+                    /var/jenkins_home/bin/apache-maven-3.5.2/bin/mvn clean package
                 '''
             }
         }
