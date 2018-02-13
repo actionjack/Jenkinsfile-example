@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
                 echo 'Building Stage...'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']],
