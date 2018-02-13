@@ -6,6 +6,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Stage...'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']],
+                  userRemoteConfigs: [[url: 'https://github.com/blade-samples/hello.git']]])
             }
         }
         stage('Test') {
